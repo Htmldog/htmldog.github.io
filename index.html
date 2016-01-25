@@ -1,16 +1,16 @@
 ---
 layout: default
-title: 首页
+title: 全部文章
 ---
-<h2>{{ page.title }}</h2>
+<h1>{{ page.title }}</h1>
 
-<ul>
+<ol>
 　　{% for post in site.posts %}
 <li>
-	<span class="fl">
+	<span class="date fr">{{ post.date | date_to_string }}</span>
+	<span>
 		<a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
 	</span>
-	<span class="date fr">{{ post.date | date_to_string }}</span> 
 </li>
 　　{% endfor %}
-</ul>
+</ol>
